@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+   		<meta charset="UTF-8">
+    	<title></title>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+ 
+      <style type="text/css">
+  
+      </style>
+	</head>
+  <body>
+  </body>
+  <script type="text/javascript">//chessboard
+  function chessBoard(){
+     var size = 8;
+    var board = "";
+    for (var i = 0; i< size; i++) { 
+     for (var j = 0; j< size; j++) { 
+        if ((i + j) % 2 == 0) {
+            board += " ";  
+        }  
+        else {
+           board += "#"; 
+        }    
+     
+      }  
+     board += "\n";
+    }
+    console.log(board);
+  }
+   chessBoard();
+  </script>
+  <script type="text/javascript">//string combination
+    function combo(str){
+var buff = [];
+var res = [];
+for (i=0;i<str.length;i++){
+    buff = [str[i]];
+    var index=0;
+      while(res[index]){
+         buff.push(''+res[index]+str[i]);
+        index++;
+    }
+      res = res.concat(buff);
+}
+   return res;
+}
+
+combo('abc');
+  </script>
+  <script type="text/javascript">//triangle example
+    function triangle(){
+var str=7;
+  for(var i=1; i<=str; i++){
+      for(var j=1 ; j<=i; j++){
+         console.log("#");
+      }
+      console.log("\n");
+  }
+}
+triangle();
+  </script>
+  <script type="text/javascript">//checking whether given string is palindrome r not
+    function palindrome(myString){
+
+/* remove special characters, spaces and make lowercase*/
+var removeChar = myString.replace(/[^A-Z0-9]/ig, "").toLowerCase();
+
+/* reverse removeChar for comparison*/
+var checkPalindrome = removeChar.split('').reverse().join('');
+
+/* Check to see if myString is a Palindrome*/
+if(removeChar === checkPalindrome){
+  
+  document.write("<div>"+ myString + " is a Palindrome <div>");
+}else{
+  
+  document.write("<div>" + myString + " is not a Palindrome </div>");
+}
+}
+palindrome('"Oh who was it I saw, oh who?"')
+palindrome('"Madam"')
+palindrome('"Star Wars"')
+palindrome('"2,3,4,3,2"')
+palindrome('"7,10,7,8,9"')
+  </script>
+<script type="text/javascript">//simple head and tails example
+  
+var userInput = prompt("what do U choose 'heads' or 'tails' ?");
+var some=userInput.toLowerCase();
+var flip  = function(){
+ return Math.floor(Math.random()*2) ==0 ? "heads" : "tails";
+}
+if(userInput==flip()){
+alert("you win because it's a " + userInput);
+}else{
+alert("you lose because it's a " + flip());
+}
+
+</script>
+
+</html>    
+
