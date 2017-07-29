@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+   		<meta charset="UTF-8">
+    	<title>Client Stories</title>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+    	<link href="css/style.css" rel="stylesheet">
+    	<!-- <link href="css/font-awesome.min.css" rel="stylesheet"> -->
+      <style type="text/css">
+.hobbies{
+    display: none;
+  }
+  </style>
+
+	</head>
+    <body>
+   
+<script type="text/javascript">
+
+
+  var arrays=[{name:'pratibha',place:'belgaum',hobbies:['singing','dancing']},
+              {name:'ranjit',place:'vijaynagar',hobbies:['testing','reading']},
+              {name:'sudha',place:'up',hobbies:['dancing','reading-newspaper']},
+              {name:'priya',place:'vijaypur',hobbies:['dancing','singing']},
+              {name:'prajna',place:'manglore',hobbies:['singing','dancing','reading']}
+              ];  
+for (var i = 0; i < arrays.length; i++) {
+    var creatDiv=document.createElement('div');
+    creatDiv.setAttribute('id','demo'+i);
+    creatDiv.setAttribute('onclick','sometext(this.id)');
+
+    var createPara=document.createElement('p');
+
+    var createSpan1=document.createElement('span');
+    var createtext1=document.createTextNode(arrays[i].name);
+    createSpan1.appendChild(createtext1);
+
+    var createSpan2=document.createElement('span');
+    var createtext2=document.createTextNode(arrays[i].place);
+    createSpan2.appendChild(createtext2);
+     
+    createPara.appendChild(createSpan1);
+    createPara.appendChild(createSpan2);
+    creatDiv.appendChild(createPara);
+
+    var innerDiv=document.createElement('div');
+    innerDiv.setAttribute('class','hobbies');
+
+    for(var j=0;j<arrays[i].hobbies.length;j++){
+      var innerpara = document.createElement('p');
+      var innertext=document.createTextNode(arrays[i].hobbies[j]);
+      innerpara.appendChild(innertext);
+      innerDiv.appendChild(innerpara);
+    }
+creatDiv.appendChild(innerDiv);
+  document.body.appendChild(creatDiv); 
+}
+
+function sometext(id){
+      var z=document.getElementsByClassName('hobbies');
+      for(var i=0;i<z.length;i++){
+      z[i].style.display="none";
+    }
+
+ var element=document.getElementById(id);
+element.childNodes[1].style.display="block";
+}
+
+</script>
+    </body>
+
+</html>    
